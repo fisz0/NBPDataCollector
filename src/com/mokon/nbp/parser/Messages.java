@@ -1,4 +1,4 @@
-package com.mokon.nbp.currency.parser;
+package com.mokon.nbp.parser;
 
 /**
  * Created by mokon on 06.03.2017.

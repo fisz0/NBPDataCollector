@@ -1,4 +1,4 @@
-package com.mokon.nbp.currency.parser;
+package com.mokon.nbp.parser;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import static com.mokon.nbp.currency.parser.Messages.*;
+import static com.mokon.nbp.parser.Messages.*;
 
 public class XMLReader {
 
@@ -46,6 +46,7 @@ public class XMLReader {
     }
 
     public void readFromNBP() {
+        tablesFinder.searchTablesExceptionHandler();
         LocalDate startChecking = fromDay.minusDays(5);
         LocalDate stopChecking = untilDay.plusDays(5);
 

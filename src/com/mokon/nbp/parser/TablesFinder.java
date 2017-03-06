@@ -1,4 +1,4 @@
-package com.mokon.nbp.currency.parser;
+package com.mokon.nbp.parser;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import static com.mokon.nbp.currency.parser.Messages.URL_DATA_FOR_SPECIFIED_DATE;
+import static com.mokon.nbp.parser.Messages.URL_DATA_FOR_SPECIFIED_DATE;
 
 public class TablesFinder {
     private List<String> currencyTables;
@@ -18,20 +18,19 @@ public class TablesFinder {
 
     public TablesFinder() {
         currencyTables = new ArrayList<>();
-        searchTablesExceptionHandler();
     }
 
     public List<String> getCurrencyTables() {
         return currencyTables;
     }
 
-    public void getCurrentDateFormated() {
+    private void getCurrentDateFormated() {
         Date date = new Date();
         LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         this.year = localDate.getYear();
     }
 
-    private void searchTablesExceptionHandler() {
+    public void searchTablesExceptionHandler() {
         try {
             searchingTables();
         } catch (IOException e) {

@@ -1,11 +1,10 @@
-package com.mokon.nbp.currency.parser;
+package com.mokon.nbp.parser;
 
-import static com.mokon.nbp.currency.parser.Messages.WRONG_INPUT_ARGUMENTS;
+import static com.mokon.nbp.parser.Messages.WRONG_INPUT_ARGUMENTS;
 
 
 public class CurrencyDataCollector {
     public static void main(String[] args) {
-        //logMessage(ASK_FOR_DATA);
         if (args.length >= 3) {
             String currency = args[0];
             String startDate = args[1];
